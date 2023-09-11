@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+    Student Name: Niki Patel
+    File Name: The Number Tricks Game
+    Date: 9/12/2023
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Number Tricks Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #dd79a8;
+            color: #000000;
+            padding: 20px 0;
+        }
+
+        .magic-trick-section {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        button {
+            background-color: #dd79a8;
+            color: #000000;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #dd79a8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Number Tricks Game</h1>
+    </header>
+
+    <!-- JavaScript code -->
+    <script>
+        // Define variables to store user input and intermediate calculations
+        var userInput, step1, step2, step3, step4, finalNumber;
+
+        function playMagicTrick() {
+            // Step 1: Get an integer from the user using prompt
+            userInput = parseInt(prompt("Choose any whole number:"));
+
+            // Step 2: Perform calculations
+            step1 = userInput + 9;
+            step2 = step1 * 2;
+            step3 = step2 - 4;
+            step4 = step3 / 2;
+            finalNumber = step4 - userInput;
+
+            // Display the output using document.write with HTML formatting
+            document.write('<section class="magic-trick-section">');
+            document.write("<h2>The Trick:</h2>");
+            document.write("<p>Step 1: I added 9 to " + userInput + ". The new number is " + step1 + ".</p>");
+            document.write("<p>Step 2: I multiplied " + step1 + " by 2. The new number is " + step2 + ".</p>");
+            document.write("<p>Step 3: I subtracted 4 from " + step2 + ". The new number is " + step3 + ".</p>");
+            document.write("<p>Step 4: I divided " + step3 + " by 2. The new number is " + step4 + ".</p>");
+            document.write("<p>Step 5: I subtracted your original number of " + userInput + " from " + step4 + ".</p>");
+            document.write("<p><strong>Your final number is: " + finalNumber + "!</strong></p>");
+            document.write("</section>");
+
+            // Display the final result using an alert
+            alert("Your final number is: " + finalNumber + "!");
+        }
+
+        // Call the playMagicTrick function when the page loads
+        playMagicTrick();
+
+        // Function to reload the page when the "Play Again" button is clicked
+        function refreshPage() {
+            location.reload();
+        }
+    </script>
+
+    <!-- Button added to refresh the page -->
+    <footer>
+        <p><button onclick="refreshPage();">Play Again</button></p>
+    </footer>
+</body>
+</html>
